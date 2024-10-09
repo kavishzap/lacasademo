@@ -8,7 +8,7 @@ import { propertyData } from "../data/data";
 
 export default function FeaturedProperties() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false }); // Trigger animation only once when in view
+  const isInView = useInView(ref, { once: false }); // Trigger animation every time it comes into view
 
   return (
     <div ref={ref}>
@@ -29,8 +29,8 @@ export default function FeaturedProperties() {
           <motion.div
             className="col-lg-4 col-md-6 col-12"
             key={index}
-            initial={{ opacity: 0, x: 100 }} // Start with opacity 0 and slide in from the right
-            animate={isInView ? { opacity: 1, x: 0, rotate: 360 } : {}} // Spin to 360 degrees
+            initial={{ opacity: 0, rotateY: 90 }} // Start hidden and rotated by 90 degrees
+            animate={isInView ? { opacity: 1, rotateY: 0 } : {}} // Flip to 0 degrees when in view
             transition={{
               type: "spring",
               stiffness: 100,
