@@ -145,7 +145,7 @@ export default function Navbar({navClass,logolight,menuClass}){
                 </div>
 
                 <ul className="buy-button list-inline mb-0">
-                    <li className="list-inline-item ps-1 mb-0">
+                    {/* <li className="list-inline-item ps-1 mb-0">
                         <div className="dropdown">
                             <button type="button" className="dropdown-toggle btn btn-sm btn-icon btn-pills btn-primary" onClick={()=>setModal(!modal)}>
                                 <FiSearch className="icons"/>
@@ -161,17 +161,19 @@ export default function Navbar({navClass,logolight,menuClass}){
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> */}
                     <li className="list-inline-item ps-1 mb-0">
-                        <Link href="/auth-login" className="btn btn-sm btn-icon btn-pills btn-primary"><FiUser className="icons"/></Link>
+                        {/* <Link href="/auth-login" className="btn btn-sm btn-icon btn-pills btn-primary"><FiUser className="icons"/></Link> */}
+                        <Link href="#" className="btn btn-sm btn-icon btn-pills btn-primary"><FiUser className="icons"/></Link>
                     </li>
                 </ul>
         
                 <div id="navigation" style={{ display: isMenu ? 'block' : 'none' }}>
                     <ul className={menuClass}>
                         <li className="has-submenu parent-menu-item">
-                            <Link href="#">Home</Link><span className="menu-arrow"></span>
-                            <ul className="submenu">
+                            <Link href="#">Home</Link>
+                            {/* <span className="menu-arrow"></span> */}
+                            {/* <ul className="submenu">
                                 <li><Link href="/" className="sub-menu-item">Hero One</Link></li>
                                 <li><Link href="/index-two" className="sub-menu-item">Hero Two</Link></li>
                                 <li><Link href="/index-three" className="sub-menu-item">Hero Three</Link></li>
@@ -179,13 +181,20 @@ export default function Navbar({navClass,logolight,menuClass}){
                                 <li><Link href="/index-five" className="sub-menu-item">Hero Five </Link></li>
                                 <li><Link href="/index-six" className="sub-menu-item">Hero Six</Link></li>
                                 <li><Link href="/index-seven" className="sub-menu-item">Hero Seven</Link></li>
-                            </ul>
+                            </ul> */}
                         </li>
-                        <li><Link href="/buy" className="sub-menu-item">Buy</Link></li>
+
+                        <li><Link href="#" className="sub-menu-item">Buy</Link></li>
                         
-                        <li><Link href="/sell" className="sub-menu-item">Sell</Link></li>
+                        <li><Link href="#" className="sub-menu-item">Sell</Link></li>
+
+                        <li><Link href="#" className="sub-menu-item">Rent</Link></li>
+
+                        {/* <li><Link href="/buy" className="sub-menu-item">Buy</Link></li>
+                        
+                        <li><Link href="/sell" className="sub-menu-item">Sell</Link></li> */}
         
-                        <li className="has-submenu parent-parent-menu-item">
+                        {/* <li className="has-submenu parent-parent-menu-item">
                             <Link href="#">Listing</Link><span className="menu-arrow"></span>
                             <ul className="submenu">
                                 <li className="has-submenu parent-menu-item"><Link href="#"> Grid View </Link><span className="submenu-arrow"></span>
@@ -244,9 +253,11 @@ export default function Navbar({navClass,logolight,menuClass}){
                                     </ul>  
                                 </li>
                             </ul>
-                        </li>
+                        </li> */}
                         
                         <li><Link href="/contactus" className="sub-menu-item">Contact Us</Link></li>
+
+                        <li><Link href="/contactus" className="sub-menu-item">Why LaCasa</Link></li>
                     </ul>
                 </div>
             </div>

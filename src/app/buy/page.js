@@ -20,7 +20,6 @@ export default function Buy(){
                         <div className="title-heading text-center">
                             <p className="text-white-50 para-desc mx-auto mb-0">Buy Property</p>
                             <h5 className="heading fw-semibold mb-0 sub-heading text-white title-dark">Find Your Dream Home</h5>
-                            <h5 className="heading fw-semibold mb-0 sub-heading text-white title-dark">Find Your Dream Home</h5>
                         </div>
                     </div>
                 </div>
