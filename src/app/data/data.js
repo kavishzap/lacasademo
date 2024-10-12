@@ -49,41 +49,41 @@ export const propertyData = [
 export const clientData = [
     {
         image: '/images/client/01.jpg',
-        name: 'Young Bonetti',
-        title: 'Product Manager',
-        desc: '" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "'
+        name: 'Anna Thompson',
+        title: 'Home Buyer',
+        desc: '"The experience with this platform was fantastic. I found my dream home without any hassle, and the whole process was smooth and transparent. Highly recommend it to anyone looking for real estate."'
     },
     {
         image: '/images/client/02.jpg',
-        name: 'Ofelia Bell',
-        title: 'Product Manager',
-        desc: '" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "'
+        name: 'Mark Harris',
+        title: 'Property Seller',
+        desc: '"I sold my property through this platform within a week! The process was fast, efficient, and I saved a lot on agent fees. Great service, and I will definitely use it again."'
     },
     {
         image: '/images/client/03.jpg',
-        name: 'Barbara Carpenter',
-        title: 'Product Manager',
-        desc: '" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "'
+        name: 'Lisa White',
+        title: 'Rental Tenant',
+        desc: '"Renting through this platform was a breeze. I found a beautiful apartment in a perfect location, and the platform made the entire process super easy. Definitely a 5-star service."'
     },
     {
         image: '/images/client/04.jpg',
-        name: 'Jesus Day',
-        title: 'Product Manager',
-        desc: '" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "'
+        name: 'John Miller',
+        title: 'Landlord',
+        desc: '"As a landlord, I was impressed with how quickly I could list and rent out my property. The platform is user-friendly, and the customer support is outstanding!"'
     },
     {
         image: '/images/client/05.jpg',
-        name: 'Jennifer Smith',
-        title: 'Product Manager',
-        desc: '" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "'
+        name: 'Sophia Rodriguez',
+        title: 'Real Estate Investor',
+        desc: '"I found great investment properties on this platform. The detailed listings and easy communication with sellers made my buying decision straightforward. A fantastic resource for investors!"'
     },
     {
         image: '/images/client/06.jpg',
-        name: 'Michael Wilkes',
-        title: 'Product Manager',
-        desc: '" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "'
+        name: 'Michael Scott',
+        title: 'Vacation Rental Owner',
+        desc: '"Listing my vacation home on this platform was the best decision I made. The exposure was excellent, and I quickly found tenants for the upcoming season. Highly recommended for property owners!"'
     },
-]
+];
 
 export const brokerData = [
     {

@@ -112,7 +112,7 @@ export default function FeaturedProperties() {
 
         <div className="col-12 mt-4 pt-2">
           <div className="text-center">
-            <Link href="/grid" className="mt-3 fs-6 text-primary">
+            <Link href="/" className="mt-3 fs-6 text-primary">
               View More Properties{" "}
               <i className="mdi mdi-arrow-right align-middle"></i>
             </Link>

@@ -10,8 +10,8 @@ const league = League_Spartan({
  })
 
 export const metadata = {
-  title: 'Towntor - Next Js Real Estate Bootstrap 5 Landing Template',
-  description: 'Towntor - Next Js Real Estate Bootstrap 5 Landing Template',
+  title: 'La Casa Properties',
+  description: 'La Casa Properties',
 }
 
 export default function RootLayout({ children }) {
