@@ -12,6 +12,7 @@ import TextAnimation from "./components/textAnimation";
 import ScrollTop from "./components/scrollTop";
 import Categories from "./components/categories";
 import VideoSection from "./videoSection/page";
+import AnimatedShapes from "./components/animation";
 
 export default function Home() {
   return (
@@ -61,32 +62,25 @@ export default function Home() {
         <div className="container mt-100 mt-40">
           <FeaturedProperties />
         </div>
-        <div className="p-4">
+        {/* <div className="p-4">
           <VideoSection />
-        </div>
-
-        
-
-        <div className="container mt-100 mt-60">
+        </div> */}
+        <AnimatedShapes />
+        <div className="container mt-100 mt-10">
           <AboutUs />
         </div>
-
+        <AnimatedShapes />
         <div className="container mt-100 mt-60">
           <ClientOne />
         </div>
-
-        
         <div className="container mt-100 mt-60">
           <GetInTouch2 />
         </div>
-
+        <AnimatedShapes />
         <div className="container mt-100 mt-60">
           <Broker />
         </div>
-
-        <div className="container mt-100 mt-60">
-          <GetInTuch />
-        </div>
+        <AnimatedShapes />
       </section>
       <Footer />
       <ScrollTop />

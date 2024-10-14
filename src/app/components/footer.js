@@ -7,7 +7,6 @@ import { FiYoutube, FiFacebook, FiInstagram, FiMail, FiPhone } from "../assets/i
 export default function Footer() {
   return (
     <>
-      <section className="bg-building-pic d-table w-100" style={{ backgroundImage: "url('/images/building.png')" }}></section>
       <footer className="bg-footer">
         <div className="container">
           <div className="row">

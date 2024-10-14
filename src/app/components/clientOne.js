@@ -5,10 +5,10 @@ import dynamic from "next/dynamic";
 
 import { clientData } from "../data/data";
 
-const TinySlider = dynamic(() =>import('tiny-slider-react'),{ssr:false})
+const TinySlider = dynamic(() => import('tiny-slider-react'), { ssr: false })
 import '../../../node_modules/tiny-slider/dist/tiny-slider.css';
 
-export default function ClientOne(){
+export default function ClientOne() {
     let settings = {
         container: '.tiny-three-item',
         controls: false,
@@ -34,56 +34,59 @@ export default function ClientOne(){
                 items: 1
             },
         },
-      };
-    return(
+    };
+    
+    return (
         <>
-        <div className="row justify-content-center">
-            <div className="col">
-                <div className="section-title text-center mb-4 pb-2">
-                    <h4 className="title mb-3">What Our Client Say ?</h4>
-                    <p className="text-muted para-desc mb-0 mx-auto">A great platform to buy, sell, and rent your properties with utmost guarantee.</p>
+            <div className="row justify-content-center">
+                <div className="col">
+                    <div className="section-title text-center mb-4 pb-2">
+                        <h4 className="title mb-3">What Our Clients Say?</h4>
+                        <p className="text-muted para-desc mb-0 mx-auto">A great platform to buy, sell, and rent your properties with utmost guarantee.</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div className="row">
-            <div className="col-12 mt-4">
-                <div className="tiny-three-item">
-                    <TinySlider settings={settings}>
-                        {clientData.map((item,index)=>{
-                            return(
-                                <div className="tiny-slider client-testi" key={index}>
-                                    <div className="card border-0 bg-white">
-                                        <div className="card-body p-4 rounded-3 shadow m-2">
-                                            <i className="mdi mdi-format-quote-open display-1 text-primary opacity-25 position-absolute end-0 top-0"></i>
+            <div className="row">
+                <div className="col-12 mt-4">
+                    <div className="tiny-three-item">
+                        <TinySlider settings={settings}>
+                            {clientData.map((item, index) => {
+                                return (
+                                    <div className="tiny-slider client-testi" key={index}>
+                                        <div className="card border-0" style={{
+                                           // Replace with your image
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center',
+                                            position: 'relative',
+                                            overflow: 'hidden',
+                                            borderRadius: '10px',
+                                        }}>
+                                            <div className="card-body p-4 rounded-3 shadow m-2" style={{
+                                                backdropFilter: 'blur(10px)', // Blurs the background
+                                                backgroundImage: 'url("/images/bg12.png")', 
+                                                backgroundColor: 'rgba(255, 255, 255, 0.7)', // Adds a semi-transparent overlay
+                                            }}>
+                                                <i className="mdi mdi-format-quote-open display-1 text-white opacity-25 position-absolute end-0 top-0"></i>
 
-                                            <div className="d-flex">
-                                                <Image src={item.image} width={45} height={45} className="avatar avatar-md-sm rounded-circle shadow-md" alt=""/>
-                                                <div className="flex-1 ms-3">
-                                                    <h6 className="mb-0">{item.name}</h6>
-                                                    <small className="text-muted">{item.title}</small>
+                                                <div className="d-flex">
+                                                    <Image src={item.image} width={45} height={45} className="avatar avatar-md-sm rounded-circle shadow-md" alt="" />
+                                                    <div className="flex-1 ms-3">
+                                                        <h6 className="mb-0">{item.name}</h6>
+                                                        <small className="text-muted">{item.title}</small>
+                                                    </div>
                                                 </div>
+
+                                                <p className="text-muted fst-italic mb-0 mt-4">{item.desc}</p>
                                             </div>
-                                            
-                                            <p className="text-muted fst-italic mb-0 mt-4">{item.desc}</p>
-                                            
-                                            <ul className="list-unstyled mb-0 mt-3 text-warning h5">
-                                                <li className="list-inline-item"><i className="mdi mdi-star"></i></li>
-                                                <li className="list-inline-item"><i className="mdi mdi-star"></i></li>
-                                                <li className="list-inline-item"><i className="mdi mdi-star"></i></li>
-                                                <li className="list-inline-item"><i className="mdi mdi-star"></i></li>
-                                                <li className="list-inline-item"><i className="mdi mdi-star"></i></li>
-                                            </ul>
-                                            
                                         </div>
                                     </div>
-                                </div>
-                            )
-                        })}
-                    </TinySlider>
+                                );
+                            })}
+                        </TinySlider>
+                    </div>
                 </div>
             </div>
-        </div>
         </>
-    )
+    );
 }
