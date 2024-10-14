@@ -1,4 +1,6 @@
-import React from "react";
+'use client'
+
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/navbar";
 import FeaturedProperties from "./components/featuredProperties";
 import ClientOne from "./components/clientOne";
@@ -10,11 +12,26 @@ import GetInTouch2 from "./GetInTouch2/page";
 import SelectThree from "./components/select/selectThree";
 import TextAnimation from "./components/textAnimation";
 import ScrollTop from "./components/scrollTop";
-import Categories from "./components/categories";
-import VideoSection from "./videoSection/page";
 import AnimatedShapes from "./components/animation";
+import Loader from "./components/loader"; // Import your loader
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  // Simulate content loading time
+  useEffect(() => {
+    // Simulate a loading delay (you can use actual loading logic here, e.g., API call)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // You can adjust the delay
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
+  if (loading) {
+    return <Loader />; // Show loader while loading
+  }
+
   return (
     <>
       <Navbar
@@ -28,7 +45,7 @@ export default function Home() {
             id="home"
           >
             <div
-              className="bg-overlay image-wrap "
+              className="bg-overlay image-wrap"
               id="hero-images"
               style={{
                 backgroundImage: "url('/images/bg/hero_background_image.png')",
@@ -54,6 +71,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="section pt-5">
         <div className="container">
           <SelectThree />
@@ -62,26 +80,32 @@ export default function Home() {
         <div className="container mt-100 mt-40">
           <FeaturedProperties />
         </div>
-        {/* <div className="p-4">
-          <VideoSection />
-        </div> */}
+
         <AnimatedShapes />
+
         <div className="container mt-100 mt-10">
           <AboutUs />
         </div>
+
         <AnimatedShapes />
+
         <div className="container mt-100 mt-60">
           <ClientOne />
         </div>
+
         <div className="container mt-100 mt-60">
           <GetInTouch2 />
         </div>
+
         <AnimatedShapes />
+
         <div className="container mt-100 mt-60">
           <Broker />
         </div>
+
         <AnimatedShapes />
       </section>
+
       <Footer />
       <ScrollTop />
     </>
