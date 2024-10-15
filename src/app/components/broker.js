@@ -1,88 +1,194 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { FiMail } from "../assets/icons/vander";
-import { brokerData } from "../data/data";
+import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa"; // Importing icons
 
-import { FiFacebook, FiInstagram, FiTwitter } from "../assets/icons/vander";
+const AgentsSection = () => {
+  const containerStyle = {
+    textAlign: "center",
+    padding: "40px 20px",
+    backgroundColor: "#f8f8f8",
+  };
 
-export default function Broker() {
+  const titleStyle = {
+    fontSize: "30px",
+    color: "#333",
+    marginBottom: "40px",
+    fontWeight: "bold",
+  };
+
+  const agentsContainerStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", // Responsive grid
+    gap: "20px",
+    justifyContent: "center",
+  };
+
+  const agentCardStyle = {
+    backgroundColor: "#fff",
+    borderRadius: "15px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    textAlign: "center",
+    overflow: "hidden", // Ensure image doesn't overflow the card
+    transition: "transform 0.3s ease-in-out",
+    position: "relative",
+  };
+
+  const imageStyle = {
+    width: "100%",
+    height: "300px", // Set a height for the image
+    objectFit: "cover", // Ensure the image covers the card without stretching
+  };
+
+  const socialIconsStyle = {
+    gap: "20px",
+  };
+
   return (
-    <>
-      <div className="row justify-content-center">
-        <div className="col">
-          <div className="section-title text-center mb-4 pb-2">
-            <h4 className="title">Have Question ? Meet Our Agents</h4>
-            <p className="text-muted para-desc mb-0 mx-auto">
-              Our experienced and dedicated agents are here to help you navigate
-              the real estate market, offering personalized support and expert
-              advice every step of the way.
-            </p>
-          </div>
+    <div style={containerStyle}>
+      <h2 style={titleStyle}>Meet Our Agents</h2>
+      <div style={agentsContainerStyle}>
+        {/* Agent 1 */}
+        <div
+          className="agent-card"
+          style={agentCardStyle}
+          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        >
+          <img
+            src="/images/test3.png" // Replace with your actual image path
+            alt="Agent 1"
+            style={imageStyle}
+          />
+          <ul
+            className="list-unstyled social-icon foot-social-icon mb-0 mt-4 d-flex justify-content-center justify-content-md-start"
+            style={socialIconsStyle}
+          >
+            <li className="list-inline-item">
+              <Link
+                href="https://www.facebook.com/LaCasaPropertiesMauritius/"
+                target="_blank"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaFacebook
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+            <li className="list-inline-item">
+              <Link
+                href="https://www.instagram.com/lacasaproperties/?hl=en"
+                target="_blank"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaInstagram
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+            <li className="list-inline-item">
+              <Link
+                href="https://www.youtube.com/@LaCasa-Properties"
+                target="_blank"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaYoutube
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+            <li className="list-inline-item">
+              <Link
+                href="https://www.tiktok.com/@lacasaproperties"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaTiktok
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Agent 2 */}
+        <div
+          className="agent-card"
+          style={agentCardStyle}
+          onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+          onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        >
+          <img
+            src="/images/test3.png" // Replace with your actual image path
+            alt="Agent 2"
+            style={imageStyle}
+          />
+          <ul
+            className="list-unstyled social-icon foot-social-icon mb-0 mt-4 d-flex justify-content-center justify-content-md-start"
+            style={socialIconsStyle}
+          >
+            <li className="list-inline-item">
+              <Link
+                href="https://www.facebook.com/LaCasaPropertiesMauritius/"
+                target="_blank"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaFacebook
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+            <li className="list-inline-item">
+              <Link
+                href="https://www.instagram.com/lacasaproperties/?hl=en"
+                target="_blank"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaInstagram
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+            <li className="list-inline-item">
+              <Link
+                href="https://www.youtube.com/@LaCasa-Properties"
+                target="_blank"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaYoutube
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+            <li className="list-inline-item">
+              <Link
+                href="https://www.tiktok.com/@lacasaproperties"
+                className="rounded-3"
+                style={{ border: "none" }}
+              >
+                <FaTiktok
+                  className="fea align-middle"
+                  style={{ fontSize: "32px" }}
+                />
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
-      {/* Centering the row */}
-      <div className="row justify-content-center align-items-center g-4 mt-0">
-        {brokerData.map((item, index) => {
-          return (
-            <div
-              className="col-lg-3 col-md-4 col-12 d-flex justify-content-center"
-              key={index}
-            >
-              <div className="card team team-primary text-center">
-                {/* Centering the image */}
-                <div className="card-img team-image d-inline-block mx-auto rounded-pill avatar avatar-ex-large overflow-hidden position-relative">
-                  <Image
-                    src={item.image}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                    className="img-fluid"
-                    alt=""
-                  />
-                  <div className="card-overlay avatar avatar-ex-large rounded-pill position-absolute"></div>
-                </div>
-
-                <div className="content mt-3 mb-5">
-                  <Link
-                    href="/page-team-detail"
-                    className="text-dark h5 mb-0 title"
-                  >
-                    {item.name}
-                  </Link>
-                  <ul className="list-unstyled team-social mb-0 position-absolute bottom-0 start-50 translate-middle-x">
-                    <li className="list-inline-item">
-                      <Link href="#" className="btn btn-sm btn-pills btn-icon">
-                        <FiFacebook className="icons fea-social" />
-                      </Link>
-                    </li>
-                    <li className="list-inline-item">
-                      <Link href="#" className="btn btn-sm btn-pills btn-icon">
-                        <FiInstagram className="icons fea-social" />
-                      </Link>
-                    </li>
-                    <li className="list-inline-item">
-                      <Link href="#" className="btn btn-sm btn-pills btn-icon">
-                        <FiTwitter className="icons fea-social" />
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="d-flex justify-content-center mt-4 pt-2">
-        <Link href="/" className="btn btn-pills btn-primary">
-          <span className="h5 mb-0 me-1">
-            <FiMail className="fea icon-sm" />
-          </span>
-          Contact us
-        </Link>
-      </div>
-      ;
-    </>
+    </div>
   );
-}
+};
+
+export default AgentsSection;

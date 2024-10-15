@@ -17,7 +17,7 @@ export default function TextAnimation(){
             wrapper="span"
             speed={5}
             repeat={Infinity}
-            className="typewrite text-primary ms-2"
+            className="typewrite text-primary"
             cursor={false}
         /></h4>
     )

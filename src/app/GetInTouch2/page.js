@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
-import Head from 'next/head';
-import React, { useState } from 'react';
+"use client";
+import Head from "next/head";
+import React, { useState } from "react";
 
 const SellerForm = () => {
   const [image, setImage] = useState(null);
+  const [maxPrice, setMaxPrice] = useState("");
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -23,16 +24,15 @@ const SellerForm = () => {
   };
 
   return (
-    <>
-      <Head>
-        <title>List Your Property</title>
-        <meta name="description" content="Provide your details to list your property." />
-      </Head>
-
+    <div
+      style={{
+        backgroundImage: `url(/images/propertiesImage/2.jpg)`,
+      }}
+    >
       <div className="container">
-        <h1 className="header">List Your Property</h1>
-
-        <div className="form-container">
+        <h5 className="header">Ene Pas Pas Envers La Maison De To Reve</h5>
+        <br />
+        <div className="">
           <form>
             <div className="form-left">
               {/* Full Name */}
@@ -57,13 +57,13 @@ const SellerForm = () => {
                 />
               </div>
 
-              {/* Property Address */}
+              {/* Email Address */}
               <div className="form-group">
-                <label htmlFor="propertyAddress">Property Address *</label>
+                <label htmlFor="emailAddress">Email Address *</label>
                 <input
-                  type="text"
-                  id="propertyAddress"
-                  placeholder="Please enter the property address"
+                  type="email"
+                  id="emailAddress"
+                  placeholder="Please enter your email address"
                   required
                 />
               </div>
@@ -94,35 +94,24 @@ const SellerForm = () => {
                 />
               </div>
 
-              {/* Custom Image Upload */}
-              <div
-                className="image-upload"
-                onDrop={handleDrop}
-                onDragOver={handleDragOver}
-              >
-                <p>Drag & Drop your image here or click to upload</p>
+              {/* Max Price */}
+              <div className="form-group">
+                <label htmlFor="maxPrice">Max Price ($)</label>
                 <input
-                  type="file"
-                  id="propertyImage"
-                  className="file-input"
-                  accept="image/*"
-                  onChange={handleImageChange}
+                  type="number"
+                  id="maxPrice"
+                  placeholder="Enter maximum price"
+                  value={maxPrice}
+                  onChange={(e) => setMaxPrice(e.target.value)}
                   required
                 />
-                {image && (
-                  <div className="image-preview">
-                    <img
-                      src={URL.createObjectURL(image)}
-                      alt="Preview"
-                      className="preview-img"
-                    />
-                  </div>
-                )}
               </div>
             </div>
 
             <div className="form-submit">
-              <button type="submit" className="btn">List Property</button>
+              <button type="submit" className="btn">
+                List Property
+              </button>
             </div>
           </form>
         </div>
@@ -134,7 +123,12 @@ const SellerForm = () => {
           flex-direction: column;
           max-width: 1200px;
           margin: 0 auto;
-          background-color: white;
+          background-color: rgba(
+            255,
+            255,
+            255,
+            0.3
+          ); // Background with opacity 0.1
           border-radius: 10px;
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
           padding: 40px;
@@ -157,7 +151,8 @@ const SellerForm = () => {
           justify-content: space-between;
         }
 
-        .form-left, .form-right {
+        .form-left,
+        .form-right {
           width: 48%;
         }
 
@@ -178,47 +173,6 @@ const SellerForm = () => {
           border: 1px solid #ccc;
           border-radius: 5px;
           font-size: 16px;
-        }
-
-        .image-upload {
-          width: 100%;
-          padding: 20px;
-          border: 2px dashed #ccc;
-          border-radius: 10px;
-          text-align: center;
-          position: relative;
-          cursor: pointer;
-          transition: border-color 0.3s ease;
-        }
-
-        .image-upload:hover {
-          border-color: #4a5568;
-        }
-
-        .image-upload p {
-          color: #718096;
-          margin: 0;
-        }
-
-        .file-input {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          cursor: pointer;
-        }
-
-        .image-preview {
-          margin-top: 15px;
-        }
-
-        .preview-img {
-          width: 100%;
-          max-height: 150px;
-          object-fit: cover;
-          border-radius: 5px;
         }
 
         .form-submit {
@@ -243,7 +197,8 @@ const SellerForm = () => {
         }
 
         @media screen and (max-width: 768px) {
-          .form-left, .form-right {
+          .form-left,
+          .form-right {
             width: 100%;
           }
 
@@ -252,7 +207,7 @@ const SellerForm = () => {
           }
         }
       `}</style>
-    </>
+    </div>
   );
 };
 

@@ -37,7 +37,7 @@ export default function ClientOne() {
     };
     
     return (
-        <>
+        <div className="mb-3 p-3">
             <div className="row justify-content-center">
                 <div className="col">
                     <div className="section-title text-center mb-4 pb-2">
@@ -48,7 +48,7 @@ export default function ClientOne() {
             </div>
 
             <div className="row">
-                <div className="col-12 mt-4">
+                <div className="col-12">
                     <div className="tiny-three-item">
                         <TinySlider settings={settings}>
                             {clientData.map((item, index) => {
@@ -72,7 +72,7 @@ export default function ClientOne() {
                                                 <div className="d-flex">
                                                     <Image src={item.image} width={45} height={45} className="avatar avatar-md-sm rounded-circle shadow-md" alt="" />
                                                     <div className="flex-1 ms-3">
-                                                        <h6 className="mb-0">{item.name}</h6>
+                                                    <h6 className="mb-0" style={{ color: 'white' }}>{item.name}</h6>
                                                         <small className="text-muted">{item.title}</small>
                                                     </div>
                                                 </div>
@@ -87,6 +87,6 @@ export default function ClientOne() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

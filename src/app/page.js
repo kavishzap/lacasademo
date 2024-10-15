@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/navbar";
@@ -12,19 +12,35 @@ import GetInTouch2 from "./GetInTouch2/page";
 import SelectThree from "./components/select/selectThree";
 import TextAnimation from "./components/textAnimation";
 import ScrollTop from "./components/scrollTop";
-import AnimatedShapes from "./components/animation";
 import Loader from "./components/loader"; // Import your loader
-import SocialMediaIcons from './components/socialmedia/socialMediaIcons';
+import VideoSection from "./videoSection/page";
+import Link from "next/link";
+import { FaTiktok, FaYoutube, FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [hovered, setHovered] = useState(null);
+  const images = [
+    "/images/propertiesImage/2.jpg",
+    "/images/propertiesImage/4.jpg",
+    "/images/propertiesImage/6.jpg",
+  ];
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change every 3 seconds
 
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, [images.length]);
   // Simulate content loading time
   useEffect(() => {
     // Simulate a loading delay (you can use actual loading logic here, e.g., API call)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // You can adjust the delay
+    }, 3000); // You can adjust the delay
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
@@ -54,21 +70,78 @@ export default function Home() {
               className="bg-overlay image-wrap"
               id="hero-images"
               style={{
-                backgroundImage: "url('/images/bg/hero_background_image.png')",
+                backgroundImage: `url(${images[currentImageIndex]})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 filter: "brightness(60%)",
                 transition: "filter 0.5s ease-in-out", // Smooth transition effect
-                height: "100%", // Ensures the image covers full height
+                height: "20%", // Default height for larger screens
               }}
             ></div>
 
             <div className="bg-overlay bg-black opacity-50"></div>
 
-            <div className="container">
+            <div className="container" style={{ marginTop: "-90px" }}>
               <div className="row justify-content-center">
                 <div className="col-12">
-                  <div className="title-heading">
+                  <ul
+                    className="list-unstyled social-icon foot-social-icon mb-0 mt-4 d-flex justify-content-center justify-content-md-start"
+                    style={{ gap: "20px" }}
+                  >
+                    <li className="list-inline-item">
+                      <Link
+                        href="/https://www.facebook.com/LaCasaPropertiesMauritius/"
+                        target="_blank"
+                        className="rounded-3"
+                        style={{ border: "none" }}
+                      >
+                        <FaFacebook
+                          className="fea align-middle"
+                          style={{ fontSize: "32px" }}
+                        />
+                      </Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link
+                        href="/https://www.instagram.com/lacasaproperties/?hl=en"
+                        target="_blank"
+                        className="rounded-3"
+                        style={{ border: "none" }}
+                      >
+                        <FaInstagram
+                          className="fea align-middle"
+                          style={{ fontSize: "32px" }}
+                        />
+                      </Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link
+                        href="/https://www.youtube.com/@LaCasa-Properties"
+                        target="_blank"
+                        className="rounded-3"
+                        style={{ border: "none" }}
+                      >
+                        <FaYoutube
+                          className="fea align-middle"
+                          style={{ fontSize: "32px" }}
+                        />
+                      </Link>
+                    </li>
+                    <li className="list-inline-item">
+                      <Link
+                        href="/https://www.tiktok.com/@lacasaproperties"
+                        className="rounded-3"
+                        style={{ border: "none" }}
+                      >
+                        <FaTiktok
+                          className="fea align-middle"
+                          style={{ fontSize: "32px" }}
+                        />
+                      </Link>
+                    </li>
+                  </ul>
+
+                  <div className="title-heading" style={{ marginTop: "20px" }}>
                     <TextAnimation />
                     <p className="para-desc text-white title-dark mb-0">
                       TO LAKAZ SO VALER{" "}
@@ -81,43 +154,24 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div style={{ marginTop: "-120px" }} className="container">
+            <SelectThree />
+          </div>
         </div>
       </section>
 
-      <section className="section pt-5">
-        <div style={{ marginTop: '-190px' }} className="container">
-          <SelectThree />
-        </div>
-        <div className="container mt-100 mt-40">
-          <FeaturedProperties />
-        </div>
+      <VideoSection />
+      <br />
+      <FeaturedProperties />
 
-        <AnimatedShapes />
+      <br />
+      <AboutUs />
 
-        <div className="container mt-100 mt-10">
-          <AboutUs />
-        </div>
+      <Broker/>
 
-        <AnimatedShapes />
-
-        <div className="container mt-100 mt-60">
-          <ClientOne />
-        </div>
-
-        <div className="container mt-100 mt-60">
-          <GetInTouch2 />
-        </div>
-
-        <AnimatedShapes />
-
-        <div className="container mt-100 mt-60">
-          <Broker />
-        </div>
-
-        <AnimatedShapes />
-      </section>
-      <SocialMediaIcons />
-
+      <ClientOne />
+      
+      <GetInTouch2 />
       <Footer />
       <ScrollTop />
     </>

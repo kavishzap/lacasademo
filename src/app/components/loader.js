@@ -27,16 +27,6 @@ export default function Loader() {
         }}
         style={{ width: "100px", height: "100px" }} // Adjust size as needed
       />
-
-      {/* Loading Text */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
-        style={{ marginTop: "20px", fontSize: "18px", fontWeight: "bold" }}
-      >
-        Loading...
-      </motion.div>
     </div>
   );
 }

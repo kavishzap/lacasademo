@@ -38,14 +38,13 @@ export default function FeaturedProperties() {
   };
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="mt-10 p-2">
       <div className="row justify-content-center">
         <div className="col">
           <div className="section-title text-center pb-2">
             <h4 className="title text-extrabold">Featured Properties</h4>
-            <p className="text-muted para-desc mx-auto">
-              Discover your next home without the hassle of middlemen. Buy,
-              sell, or rent with ease.
+            <p className="para-desc mx-auto" style={{ color: "#a9871c" }}>
+              To Premier Pas Pu Fer To Reve Vin Ene Realiter
             </p>
           </div>
         </div>
@@ -54,12 +53,23 @@ export default function FeaturedProperties() {
       <Slider {...sliderSettings}>
         {propertyData.slice(0, 6).map((item, index) => (
           <div key={index} className="card-container">
-            <div style={{ textAlign: "center" }}>
-             
-              <p> <i className="mdi mdi-map-marker fs-5 me-2 text-black"></i> {item.title}</p>
+            <div
+              style={{
+                textAlign: "center",
+                backgroundColor: "rgba(169, 135, 28)",
+                borderRadius: "10px",
+                color: "white", 
+              }}
+            >
             </div>
 
             <div className="property-card">
+              <div className="property-info">
+                <ul className="list-unstyled d-flex align-items-center justify-content-between property-details">
+                  <i className="mdi mdi-map-marker fs-5 me-2 text-black"></i>{" "}
+                  {item.title}
+                </ul>
+              </div>
               <Image
                 src={item.image}
                 width={0}
@@ -78,7 +88,7 @@ export default function FeaturedProperties() {
                 <ul className="list-unstyled d-flex align-items-center justify-content-between property-details">
                   <li className="d-flex align-items-center me-3">
                     <i className="mdi mdi-arrow-expand-all fs-5 me-2 text-white"></i>
-                    <span className="text-white">8000sqf</span>
+                    <span className="text-white">8000 m2</span>
                   </li>
                   <li className="d-flex align-items-center me-3">
                     <i className="mdi mdi-bed fs-5 me-2 text-white"></i>

@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-
-import { FiSearch, FiUser } from "../assets/icons/vander";
 
 export default function Navbar({ navClass, logolight, menuClass }) {
   let [scroll, setScroll] = useState(false);
@@ -19,7 +16,7 @@ export default function Navbar({ navClass, logolight, menuClass }) {
       setModal(false);
     };
     document.addEventListener("mousedown", closeDropdown);
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
   }, []);
   const toggleMenu = () => {
     setisMenu(!isMenu);
@@ -121,52 +118,12 @@ export default function Navbar({ navClass, logolight, menuClass }) {
       <header
         id="topnav"
         className={`${scroll ? "nav-sticky" : ""} ${navClass}`}
+        style={{
+          backgroundColor: "transparent", // Transparent for mobile
+          transition: "background-color 0.3s ease",
+        }}
       >
         <div className="container">
-          {/* {logolight === false ? (
-            <Link className="logo" href="/">
-              <span className="logo-light-mode">
-                <Image
-                  src="/images/Group 2.png"
-                  width={150}
-                  height={70}
-                  className="l-dark mt-1"
-                  alt=""
-                />
-                <Image
-                  src="/images/Group 2.png"
-                  width={150}
-                  height={70}
-                  className="l-light mt-1"
-                  alt=""
-                />
-              </span>
-              <Image
-                src="/images/Group 2.png"
-                width={150}
-                height={70}
-                className="logo-dark-mode mt-1"
-                alt=""
-              />
-            </Link>
-          ) : (
-            <Link className="logo" href="/">
-              <Image
-                src="/images/Group 2.png"
-                width={150}
-                height={70}
-                className="logo-light-mode mt-1"
-                alt=""
-              />
-              <Image
-                src="/images/Group 2.png"
-                width={150}
-                height={70}
-                className="logo-dark-mode mt-1"
-                alt=""
-              />
-            </Link>
-          )} */}
           <div className="menu-extras">
             <div className="menu-item">
               <Link
@@ -184,144 +141,41 @@ export default function Navbar({ navClass, logolight, menuClass }) {
             </div>
           </div>
 
-          <ul className="buy-button list-inline mb-0">
-            {/* <li className="list-inline-item ps-1 mb-0">
-                        <div className="dropdown">
-                            <button type="button" className="dropdown-toggle btn btn-sm btn-icon btn-pills btn-primary" onClick={()=>setModal(!modal)}>
-                                <FiSearch className="icons"/>
-                            </button>
-                            <div className={`${modal === true ? 'show' : ''} dropdown-menu dd-menu dropdown-menu-start bg-white rounded-3 border-0 mt-3 p-0 right-0`} style={{width: "240px", right:"0"}}>
-                                <div className="search-bar">
-                                    <div id="itemSearch" className="menu-search mb-0">
-                                        <form role="search" method="get" id="searchItemform" className="searchform">
-                                            <input type="text" className="form-control rounded-3 border" name="s" id="searchItem" placeholder="Search..."/>
-                                            <input type="submit" id="searchItemsubmit" value="Search"/>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li> */}
-            <li className="list-inline-item ps-1 mb-0">
-              <Link
-                href="#"
-                className="btn btn-md btn-icon btn-pills btn-primary" // Change btn-sm to btn-md for a larger button
-                style={{ padding: "10px 12px" }} // Adjust the padding for larger button size if necessary
-              >
-                <FiUser className="icons" style={{ fontSize: "1.5rem" }} />{" "}
-                {/* Adjust icon size */}
-              </Link>
-            </li>
-          </ul>
-
           <div id="navigation" style={{ display: isMenu ? "block" : "none" }}>
             <ul className={menuClass}>
               <li className="has-submenu parent-menu-item">
-                <Link href="#">Home</Link>
-                {/* <span className="menu-arrow"></span> */}
-                {/* <ul className="submenu">
-                                <li><Link href="/" className="sub-menu-item">Hero One</Link></li>
-                                <li><Link href="/index-two" className="sub-menu-item">Hero Two</Link></li>
-                                <li><Link href="/index-three" className="sub-menu-item">Hero Three</Link></li>
-                                <li><Link href="/index-four" className="sub-menu-item">Hero Four</Link></li>
-                                <li><Link href="/index-five" className="sub-menu-item">Hero Five </Link></li>
-                                <li><Link href="/index-six" className="sub-menu-item">Hero Six</Link></li>
-                                <li><Link href="/index-seven" className="sub-menu-item">Hero Seven</Link></li>
-                            </ul> */}
-              </li>
-
-              <li>
-                <Link href="#" className="sub-menu-item">
-                  Buy
+                <Link href="#" style={{ color: "#a9871c" }}>
+                  Home
                 </Link>
               </li>
 
               <li>
-                <Link href="#" className="sub-menu-item">
-                  Sell
+                <Link
+                  href="#"
+                  className="sub-menu-item"
+                  style={{ color: "#a9871c" }}
+                >
+                  Properties
                 </Link>
               </li>
 
               <li>
-                <Link href="#" className="sub-menu-item">
-                  Rent
+                <Link
+                  href="#"
+                  className="sub-menu-item"
+                  style={{ color: "#a9871c" }}
+                >
+                  Why La Casa
                 </Link>
               </li>
 
-              {/* <li><Link href="/buy" className="sub-menu-item">Buy</Link></li>
-                        
-                        <li><Link href="/sell" className="sub-menu-item">Sell</Link></li> */}
-
-              {/* <li className="has-submenu parent-parent-menu-item">
-                            <Link href="#">Listing</Link><span className="menu-arrow"></span>
-                            <ul className="submenu">
-                                <li className="has-submenu parent-menu-item"><Link href="#"> Grid View </Link><span className="submenu-arrow"></span>
-                                    <ul className="submenu">
-                                        <li><Link href="/grid" className="sub-menu-item">Grid Listing</Link></li>
-                                        <li><Link href="/grid-sidebar" className="sub-menu-item">Grid Sidebar </Link></li>
-                                    </ul> 
-                                </li>
-                                <li className="has-submenu parent-menu-item"><Link href="#"> List View </Link><span className="submenu-arrow"></span>
-                                    <ul className="submenu">
-                                        <li><Link href="/list" className="sub-menu-item">List Listing</Link></li>
-                                        <li><Link href="/list-sidebar" className="sub-menu-item">List Sidebar </Link></li>
-                                    </ul>  
-                                </li>
-                                <li className="has-submenu parent-menu-item"><Link href="#"> Property Detail </Link><span className="submenu-arrow"></span>
-                                    <ul className="submenu">
-                                        <li><Link href="/property-detail" className="sub-menu-item">Property Detail</Link></li>
-                                        <li><Link href="/property-detail-two" className="sub-menu-item">Property Detail Two</Link></li>
-                                    </ul>  
-                                </li>
-                            </ul>
-                        </li>
-        
-                        <li className="has-submenu parent-parent-menu-item">
-                            <Link href="#">Pages</Link><span className="menu-arrow"></span>
-                            <ul className="submenu">
-                                <li><Link href="/aboutus" className="sub-menu-item">About Us</Link></li>
-                                <li><Link href="/features" className="sub-menu-item">Features</Link></li>
-                                <li><Link href="/pricing" className="sub-menu-item">Pricing</Link></li>
-                                <li><Link href="/faqs" className="sub-menu-item">Faqs</Link></li>
-                                <li className="has-submenu parent-menu-item"><Link href="#"> Auth Pages </Link><span className="submenu-arrow"></span>
-                                    <ul className="submenu">
-                                        <li><Link href="/auth-login" className="sub-menu-item">Login</Link></li>
-                                        <li><Link href="/auth-signup" className="sub-menu-item">Signup</Link></li>
-                                        <li><Link href="/auth-reset-password" className="sub-menu-item">Reset Password</Link></li>
-                                    </ul>  
-                                </li>
-                                <li className="has-submenu parent-menu-item"><Link href="#"> Utility </Link><span className="submenu-arrow"></span>
-                                    <ul className="submenu">
-                                        <li><Link href="/terms" className="sub-menu-item">Terms of Services</Link></li>
-                                        <li><Link href="/privacy" className="sub-menu-item">Privacy Policy</Link></li>
-                                    </ul>  
-                                </li>
-                                <li className="has-submenu parent-menu-item"><Link href="#"> Blog </Link><span className="submenu-arrow"></span>
-                                    <ul className="submenu">
-                                        <li><Link href="/blogs" className="sub-menu-item"> Blogs</Link></li>
-                                        <li><Link href="/blog-sidebar" className="sub-menu-item"> Blog Sidebar</Link></li>
-                                        <li><Link href="/blog-detail" className="sub-menu-item"> Blog Detail</Link></li>
-                                    </ul> 
-                                </li>
-                                <li className="has-submenu parent-menu-item"><Link href="#"> Special </Link><span className="submenu-arrow"></span>
-                                    <ul className="submenu">
-                                        <li><Link href="/comingsoon" className="sub-menu-item">Comingsoon</Link></li>
-                                        <li><Link href="/maintenance" className="sub-menu-item">Maintenance</Link></li>
-                                        <li><Link href="/error" className="sub-menu-item">404! Error</Link></li>
-                                    </ul>  
-                                </li>
-                            </ul>
-                        </li> */}
-
               <li>
-                <Link href="/" className="sub-menu-item">
+                <Link
+                  href="#"
+                  className="sub-menu-item"
+                  style={{ color: "#a9871c" }}
+                >
                   Contact Us
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/" className="sub-menu-item">
-                  Why LaCasa
                 </Link>
               </li>
             </ul>
