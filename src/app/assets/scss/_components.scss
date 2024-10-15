@@ -536,7 +536,7 @@ $value in $colors {
     margin-bottom: 15px;
     background: darken($light, 1%);
     .nav-link {
-        color: $gray-700 !important;
+        color: white !important;
         padding: 5px;
         transition: all 0.5s ease;
         &.nav-link-alt {

@@ -2,9 +2,7 @@
 // variables.scss
 //
 
-
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 // Color
 $white:                     #ffffff;
@@ -29,7 +27,7 @@ $gray-500:                  #adb5bd;
 $gray-600:                  #6c757d; 
 $gray-700:                  #495057;
 
-//Body Background
+// Body Background
 $shadow:                    0 0 3px rgba($dark,.15);
 $shadow-md:                 0 5px 13px rgba($dark, .2);
 $shadow-lg:                 0 10px 25px rgba($dark, 0.15);
@@ -38,10 +36,10 @@ $footer:                    lighten($black, 6%);
 // Base font
 $font-size-base:            17px;
 
-$font-family-base:          var(--font-league);
-$font-family-secondary:     var(--font-league);
+$font-family-base:          'Poppins', sans-serif;
+$font-family-secondary:     'Poppins', sans-serif;
 
-//Color Picker/Switcher
+// Color Picker/Switcher
 $blue:                      #38bdf8;
 $purple:                    #7b2cbf;
 $yellow:                    #facc15;
@@ -88,4 +86,4 @@ $display-font-sizes: (
     "display-4": 56px,
     "display-5": 48px,
     "display-6": 40px,
-)
+);

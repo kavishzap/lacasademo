@@ -14,6 +14,7 @@ import TextAnimation from "./components/textAnimation";
 import ScrollTop from "./components/scrollTop";
 import AnimatedShapes from "./components/animation";
 import Loader from "./components/loader"; // Import your loader
+import SocialMediaIcons from './components/socialmedia/socialMediaIcons';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -38,19 +39,30 @@ export default function Home() {
         navClass="defaultscroll sticky"
         menuClass="navigation-menu nav-left"
       />
-      <section className="position-relative mt-5 pt-4">
-        <div className="container-fluid px-md-4 px-2 mt-2">
+      <section className="position-relative">
+        <div>
           <div
-            className="bg-home-one d-table w-100 shadow rounded-3 overflow-hidden"
+            className="bg-home-one d-table w-100 shadow overflow-hidden"
             id="home"
+            style={{
+              minHeight: "100vh", // Full screen height
+              position: "relative",
+              boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.5)", // Optional shadow for depth
+            }}
           >
             <div
               className="bg-overlay image-wrap"
               id="hero-images"
               style={{
                 backgroundImage: "url('/images/bg/hero_background_image.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: "brightness(60%)",
+                transition: "filter 0.5s ease-in-out", // Smooth transition effect
+                height: "100%", // Ensures the image covers full height
               }}
             ></div>
+
             <div className="bg-overlay bg-black opacity-50"></div>
 
             <div className="container">
@@ -73,10 +85,9 @@ export default function Home() {
       </section>
 
       <section className="section pt-5">
-        <div className="container">
+        <div style={{ marginTop: '-190px' }} className="container">
           <SelectThree />
         </div>
-
         <div className="container mt-100 mt-40">
           <FeaturedProperties />
         </div>
@@ -105,6 +116,7 @@ export default function Home() {
 
         <AnimatedShapes />
       </section>
+      <SocialMediaIcons />
 
       <Footer />
       <ScrollTop />

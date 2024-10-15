@@ -121,3 +121,7 @@ a {
   height: 100%;
   object-fit: cover; /* Makes the video cover the entire screen */
 }
+
+.css-13cymwt-control{
+  background-color: unset !important;
+}

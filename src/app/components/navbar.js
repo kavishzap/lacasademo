@@ -123,7 +123,7 @@ export default function Navbar({ navClass, logolight, menuClass }) {
         className={`${scroll ? "nav-sticky" : ""} ${navClass}`}
       >
         <div className="container">
-          {logolight === false ? (
+          {/* {logolight === false ? (
             <Link className="logo" href="/">
               <span className="logo-light-mode">
                 <Image
@@ -166,7 +166,7 @@ export default function Navbar({ navClass, logolight, menuClass }) {
                 alt=""
               />
             </Link>
-          )}
+          )} */}
           <div className="menu-extras">
             <div className="menu-item">
               <Link

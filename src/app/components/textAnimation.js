@@ -10,6 +10,8 @@ export default function TextAnimation(){
                 'RESPE',
                 1000, 
                 'LAZWA',
+                1000,
+                'LARMONI',
                 1000
             ]}
             wrapper="span"
