@@ -25,12 +25,9 @@ const SellerForm = () => {
 
   return (
     <div
-      style={{
-        backgroundImage: `url(/images/propertiesImage/2.jpg)`,
-      }}
     >
       <div className="container">
-        <h5 className="header">Ene Pas Pas Envers La Maison De To Reve</h5>
+        <h5 className="header">Ene Pas Envers To Reve</h5>
         <br />
         <div className="">
           <form>
@@ -110,7 +107,7 @@ const SellerForm = () => {
 
             <div className="form-submit">
               <button type="submit" className="btn">
-                List Property
+                subscribe
               </button>
             </div>
           </form>

@@ -167,10 +167,221 @@ export default function Home() {
       <br />
       <AboutUs />
 
-      <Broker/>
+      <h4 className="heading fw-bold text-black title-dark mb-3 text-center mt-5">Meet Our Agent</h4>
+      
+      <div className="mt-4">
+        <div className="row g-0">
+          {" "}
+          {/* Added g-0 to remove gutter spacing */}
+          {/* Column 1 */}
+          <div className="col-md-6">
+            <section className="position-relative">
+              <div>
+                <div
+                  className="bg-home-one d-table w-100 shadow overflow-hidden"
+                  id="home"
+                  style={{
+                    minHeight: "50vh", // Decreased height to 50% of screen height
+                    position: "relative",
+                    boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.5)", // Optional shadow for depth
+                  }}
+                >
+                  <div
+                    className="bg-overlay image-wrap"
+                    id="hero-images"
+                    style={{
+                      backgroundImage: `url(/images/213.png)`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: "brightness(60%)",
+                      transition: "filter 0.5s ease-in-out", // Smooth transition effect
+                      height: "100%", // Full height for the overlay relative to the container
+                    }}
+                  ></div>
+
+                  <div className="bg-overlay bg-black opacity-50"></div>
+
+                  <div className="container" style={{ marginTop: "-50px" }}>
+                    <div className="row justify-content-center">
+                      <div className="col-12">
+                        <div
+                          className="title-heading"
+                          style={{ marginTop: "20px" }}
+                        >
+                          <h4 className="heading fw-bold text-white title-dark mb-3">
+                            Bilal
+                          </h4>
+                        </div>
+                        <ul
+                          className="list-unstyled social-icon foot-social-icon mb-0 mt-4 d-flex justify-content-center justify-content-md-start"
+                          style={{ gap: "20px" }}
+                        >
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.facebook.com/LaCasaPropertiesMauritius/"
+                              target="_blank"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaFacebook
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.instagram.com/lacasaproperties/?hl=en"
+                              target="_blank"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaInstagram
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.youtube.com/@LaCasa-Properties"
+                              target="_blank"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaYoutube
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.tiktok.com/@lacasaproperties"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaTiktok
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          {/* Column 2 */}
+          <div className="col-md-6">
+            <section className="position-relative">
+              <div>
+                <div
+                  className="bg-home-one d-table w-100 shadow overflow-hidden"
+                  id="home"
+                  style={{
+                    minHeight: "50vh", // Decreased height to 50% of screen height
+                    position: "relative",
+                    boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.5)", // Optional shadow for depth
+                  }}
+                >
+                  <div
+                    className="bg-overlay image-wrap"
+                    id="hero-images"
+                    style={{
+                      backgroundImage: `url(/images/shane1.png)`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      filter: "brightness(60%)",
+                      transition: "filter 0.5s ease-in-out", // Smooth transition effect
+                      height: "100%", // Full height for the overlay relative to the container
+                    }}
+                  ></div>
+
+                  <div className="bg-overlay bg-black opacity-50"></div>
+
+                  <div className="container" style={{ marginTop: "-50px" }}>
+                    <div className="row justify-content-center">
+                      <div className="col-12">
+                        <div
+                          className="title-heading"
+                          style={{ marginTop: "20px" }}
+                        >
+                          <h4 className="heading fw-bold text-white title-dark mb-3">
+                            Shane
+                          </h4>
+                        </div>
+                        <ul
+                          className="list-unstyled social-icon foot-social-icon mb-0 mt-4 d-flex justify-content-center justify-content-md-start"
+                          style={{ gap: "20px" }}
+                        >
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.facebook.com/LaCasaPropertiesMauritius/"
+                              target="_blank"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaFacebook
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.instagram.com/lacasaproperties/?hl=en"
+                              target="_blank"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaInstagram
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.youtube.com/@LaCasa-Properties"
+                              target="_blank"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaYoutube
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                          <li className="list-inline-item">
+                            <Link
+                              href="/https://www.tiktok.com/@lacasaproperties"
+                              className="rounded-3"
+                              style={{ border: "none" }}
+                            >
+                              <FaTiktok
+                                className="fea align-middle"
+                                style={{ fontSize: "32px" }}
+                              />
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
 
       <ClientOne />
-      
+
       <GetInTouch2 />
       <Footer />
       <ScrollTop />
