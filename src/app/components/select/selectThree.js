@@ -6,15 +6,11 @@ import "rc-slider/assets/index.css";
 
 const Select = dynamic(() => import("react-select"), { ssr: false });
 
-import { FiDollarSign, FiHome, FiSearch } from "../../assets/icons/vander";
+import { FiHome, FiSearch } from "../../assets/icons/vander";
+import { FaRupeeSign } from "react-icons/fa6";
 
 export default function SelectThree() {
   let [activeIndex, setActiveIndex] = useState(0);
-  const [priceRange, setPriceRange] = useState([0, 5000000]);
-
-  const handleSliderChange = (value) => {
-    setPriceRange(value);
-  };
 
   let category = [
     { value: "1", label: "Houses" },
@@ -38,9 +34,8 @@ export default function SelectThree() {
           >
             <li className="nav-item m-1">
               <Link
-                className={`${
-                  activeIndex === 0 ? "active" : ""
-                } nav-link py-2 px-4 rounded-3 fw-medium`}
+                className={`${activeIndex === 0 ? "active" : ""
+                  } nav-link py-2 px-4 rounded-3 fw-medium`}
                 href="#"
                 scroll={false}
                 onClick={() => setActiveIndex(0)}
@@ -51,9 +46,8 @@ export default function SelectThree() {
 
             <li className="nav-item m-1">
               <Link
-                className={`${
-                  activeIndex === 1 ? "active" : ""
-                } nav-link py-2 px-4 rounded-3 fw-medium`}
+                className={`${activeIndex === 1 ? "active" : ""
+                  } nav-link py-2 px-4 rounded-3 fw-medium`}
                 href="#"
                 scroll={false}
                 onClick={() => setActiveIndex(1)}
@@ -64,9 +58,8 @@ export default function SelectThree() {
 
             <li className="nav-item m-1">
               <Link
-                className={`${
-                  activeIndex === 2 ? "active" : ""
-                } nav-link py-2 px-4 rounded-3 fw-medium`}
+                className={`${activeIndex === 2 ? "active" : ""
+                  } nav-link py-2 px-4 rounded-3 fw-medium`}
                 href="#"
                 scroll={false}
                 onClick={() => setActiveIndex(2)}
@@ -95,7 +88,7 @@ export default function SelectThree() {
                   <div className="row g-lg-0">
                     {/* Search Field */}
                     <div className="col-lg-3 col-md-6 col-12 text-white">
-                      <label className="form-label fs-6">Search</label>
+                      <label className="form-label fs-6">Search Location</label>
                       <div className="filter-search-form position-relative filter-border">
                         <FiSearch className="fea icon-ex-md icons" />
                         <input
@@ -112,9 +105,7 @@ export default function SelectThree() {
 
                     {/* Select Categories */}
                     <div className="col-lg-3 col-md-6 col-12 text-white">
-                      <label className="form-label fs-6">
-                        Select Categories
-                      </label>
+                      <label className="form-label fs-6">Select Categories</label>
                       <div className="filter-search-form position-relative filter-border">
                         <FiHome className="fea icon-ex-md icons" />
                         <Select
@@ -137,9 +128,7 @@ export default function SelectThree() {
                             }),
                             option: (provided, state) => ({
                               ...provided,
-                              backgroundColor: state.isSelected
-                                ? "#555"
-                                : "#333",
+                              backgroundColor: state.isSelected ? "#555" : "#333",
                               color: state.isSelected ? "white" : "lightgray",
                               ":hover": {
                                 backgroundColor: "#444",
@@ -151,28 +140,11 @@ export default function SelectThree() {
                       </div>
                     </div>
 
-                    {/* Minimum Price */}
-                    <div className="col-lg-3 col-md-6 col-12 text-white">
-                      <label className="form-label fs-6">Minimum Price</label>
-                      <div className="filter-search-form position-relative ">
-                        <FiHome className="fea icon-ex-md icons" />
-                        <input
-                          type="number"
-                          placeholder="Min Price"
-                          className="form-input filter-input-box border-0"
-                          style={{
-                            backgroundColor: "unset",
-                            color: "white",
-                          }}
-                        />
-                      </div>
-                    </div>
-
                     {/* Maximum Price */}
                     <div className="col-lg-3 col-md-6 col-12 text-white">
                       <label className="form-label fs-6">Maximum Price</label>
                       <div className="filter-search-form position-relative filter-border">
-                        <FiHome className="fea icon-ex-md icons" />
+                        <FaRupeeSign className="fea icon-ex-md icons" />
                         <input
                           type="number"
                           placeholder="Max Price"
@@ -186,187 +158,26 @@ export default function SelectThree() {
                     </div>
 
                     {/* Search Button */}
-                    <div className="col-lg-12 d-flex justify-content-end mt-3">
+                    <div className="col-lg-3 col-md-6 col-12 text-white d-flex align-items-end p-2">
                       <button
                         type="submit"
                         id="search"
                         name="search"
-                        style={{ height: "48px", maxWidth: "200px" }}
+                        style={{
+                          height: "48px",
+                          maxWidth: "100%",
+                          width: "100%",
+                        }}
                         className="btn btn-primary searchbtn d-flex align-items-center justify-content-center"
                       >
-                        <FiSearch
-                          className="me-2"
-                          style={{ fontSize: "1.2rem" }}
-                        />{" "}
-                        {/* Search Icon */}
                         Search
+                        <FiSearch className="me-2" style={{ fontSize: "1.2rem", marginLeft: "3px" }} />
                       </button>
                     </div>
                   </div>
                 </div>
               </form>
             </div>
-
-            {/* {activeIndex === 1 ? (
-              <div className="card border-0 active" style={{ backgroundColor: 'unset', important: true }}>
-                <form className="card-body text-start">
-                  <div className="registration-form text-dark text-start">
-                    <div className="row g-lg-0">
-                      <div className="row">
-                        <div className="col-lg-3 col-md-6 col-12 text-white">
-                          <div className="mb-3">
-                            <label className="form-label fs-6">Search :</label>
-                            <div className="filter-search-form position-relative filter-border">
-                              <FiSearch className="fea icon-ex-md icons" />
-                              <input
-                                name="name"
-                                type="text"
-                                id="job-keyword"
-                                className="form-control filter-input-box bg-light border-0"
-                                placeholder="Search your keywords"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-3 col-md-6 col-12 text-white">
-                          <div className="mb-3">
-                            <label className="form-label fs-6">
-                              Select Categories:
-                            </label>
-                            <div className="filter-search-form position-relative filter-border bg-light">
-                              <FiHome className="fea icon-ex-md icons" />
-                              <Select
-                                className="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0"
-                                options={category}
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-6 col-md-12 col-12">
-                          <div className="mb-3">
-                            <label className="form-label fs-6">
-                              Price Range: Rs {priceRange[0]} - Rs{" "}
-                              {priceRange[1]}
-                            </label>
-                            <div className="filter-search-form position-relative filter-border bg-light p-3">
-                              <Slider
-                                range
-                                min={0}
-                                max={5000000}
-                                step={100}
-                                defaultValue={priceRange}
-                                value={priceRange}
-                                onChange={handleSliderChange}
-                                trackStyle={[{ backgroundColor: "#a9871c" }]} // Customize the color of the selected range
-                                handleStyle={[
-                                  { borderColor: "#a9871c" }, // Customize the handle color
-                                  { borderColor: "#a9871c" },
-                                ]}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-3 col-md-6 col-12 text-white">
-                        <input
-                          type="submit"
-                          id="search"
-                          name="search"
-                          style={{ height: "48px" }}
-                          className="btn btn-primary searchbtn w-100"
-                          value="Search"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )}
-            {activeIndex === 2 ? (
-              <div className="card border-0 active" style={{ backgroundColor: 'unset', important: true }}>
-                <form className="card-body text-start">
-                  <div className="registration-form text-dark text-start">
-                    <div className="row g-lg-0">
-                      <div className="row">
-                        <div className="col-lg-3 col-md-6 col-12 text-white">
-                          <div className="mb-3">
-                            <label className="form-label fs-6">Search :</label>
-                            <div className="filter-search-form position-relative filter-border">
-                              <FiSearch className="fea icon-ex-md icons" />
-                              <input
-                                name="name"
-                                type="text"
-                                id="job-keyword"
-                                className="form-control filter-input-box bg-light border-0"
-                                placeholder="Search your keywords"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-3 col-md-6 col-12 text-white">
-                          <div className="mb-3">
-                            <label className="form-label fs-6">
-                              Select Categories:
-                            </label>
-                            <div className="filter-search-form position-relative filter-border bg-light">
-                              <FiHome className="fea icon-ex-md icons" />
-                              <Select
-                                className="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0"
-                                options={category}
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-6 col-md-12 col-12">
-                          <div className="mb-3">
-                            <label className="form-label fs-6">
-                              Price Range: Rs {priceRange[0]} - Rs{" "}
-                              {priceRange[1]}
-                            </label>
-                            <div className="filter-search-form position-relative filter-border bg-light p-3">
-                              <Slider
-                                range
-                                min={0}
-                                max={5000000}
-                                step={100}
-                                defaultValue={priceRange}
-                                value={priceRange}
-                                onChange={handleSliderChange}
-                                trackStyle={[{ backgroundColor: "#a9871c" }]} // Customize the color of the selected range
-                                handleStyle={[
-                                  { borderColor: "#a9871c" }, // Customize the handle color
-                                  { borderColor: "#a9871c" },
-                                ]}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="col-lg-3 col-md-6 col-12 text-white">
-                        <input
-                          type="submit"
-                          id="search"
-                          name="search"
-                          style={{ height: "48px" }}
-                          className="btn btn-primary searchbtn w-100"
-                          value="Search"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )} */}
           </div>
         </div>
       </div>

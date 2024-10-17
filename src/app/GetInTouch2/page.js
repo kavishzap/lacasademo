@@ -24,8 +24,7 @@ const SellerForm = () => {
   };
 
   return (
-    <div
-    >
+    <div>
       <div className="container">
         <h5 className="header">Ene Pas Envers To Reve</h5>
         <br />
@@ -107,7 +106,7 @@ const SellerForm = () => {
 
             <div className="form-submit">
               <button type="submit" className="btn">
-                subscribe
+                Subscribe
               </button>
             </div>
           </form>
@@ -115,17 +114,16 @@ const SellerForm = () => {
       </div>
 
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
         .container {
           display: flex;
           flex-direction: column;
           max-width: 1200px;
           margin: 0 auto;
-          background-color: rgba(
-            255,
-            255,
-            255,
-            0.3
-          ); // Background with opacity 0.1
+          background-color: rgba(255, 255, 255, 0.1); /* White with opacity */
+          backdrop-filter: blur(5px); /* Apply blur effect */
+          -webkit-backdrop-filter: blur(5px); /* Safari support */
           border-radius: 10px;
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
           padding: 40px;
@@ -135,6 +133,7 @@ const SellerForm = () => {
           text-align: center;
           font-size: 32px;
           margin-bottom: 30px;
+          font-family: 'Poppins', sans-serif;
         }
 
         .form-container {
@@ -160,7 +159,9 @@ const SellerForm = () => {
         .form-group label {
           display: block;
           margin-bottom: 5px;
-          font-weight: bold;
+          font-weight: normal; /* Remove bold */
+          font-family: 'Poppins', sans-serif;
+          color: #a9871c; /* Using label color */
         }
 
         .form-group input,
@@ -170,6 +171,7 @@ const SellerForm = () => {
           border: 1px solid #ccc;
           border-radius: 5px;
           font-size: 16px;
+          font-family: 'Poppins', sans-serif;
         }
 
         .form-submit {
@@ -179,11 +181,12 @@ const SellerForm = () => {
 
         .btn {
           padding: 15px 30px;
-          background-color: #a9871c;
+          background-color: #a9871c; /* Use label color for button background */
           color: white;
           border: none;
           border-radius: 5px;
           font-size: 16px;
+          font-family: 'Poppins', sans-serif;
           cursor: pointer;
           transition: background-color 0.3s ease;
           margin-top: 30px;
