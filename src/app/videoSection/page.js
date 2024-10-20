@@ -51,11 +51,10 @@ const VideoPlayer = () => {
   return (
     <motion.div
       ref={containerRef}
-      initial={{ scale: 0.5, opacity: 0, borderRadius: "10%" }} // Initial "drop" effect
+      initial={{ scale: 0.5, opacity: 0 }} // Initial "drop" effect
       animate={{
         scale: isVisible ? 1 : 0.5,
         opacity: isVisible ? 1 : 0,
-        borderRadius: isVisible ? "8px" : "10%", // Droplet animation
       }}
       transition={{
         duration: 1, // Smooth and slower animation duration

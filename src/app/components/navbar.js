@@ -36,15 +36,15 @@ export default function Navbar({ navClass, menuClass }) {
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-8 col-lg-4">
-              <h3
+              <h5
                 style={{
                   fontFamily: "Georgia, serif",
                   color: "#a9871c"
                 }}
                 className="m-0"
               >
-                LaCasa Properties
-              </h3>
+                La Casa Properties
+              </h5>
             </div>
 
             {/* Hamburger Menu Icon for mobile */}

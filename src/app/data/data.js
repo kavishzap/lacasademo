@@ -4,36 +4,54 @@ export const propertyData = [
     image: "/images/propertiesImage/1.jpg",
     title: "Villa at FLIC EN FLAC",
     status: "For sales",
+    space: '250',
+    details: '3 Beds',
+    price: '1.5 M'
   },
   {
     id: 2,
     image: "/images/propertiesImage/2.jpg",
     title: "Apartment at MAHEBOURG",
     status: "To Rent",
+    space: '350',
+    details: '4 Beds',
+    price: '4.5 M'
   },
   {
     id: 3,
     image: "/images/propertiesImage/3.jpg",
     title: "Apartment at CUREPIPE",
     status: "For sales",
+    space: '175',
+    details: '3 Beds',
+    price: '2.5 M'
   },
   {
     id: 4,
     image: "/images/propertiesImage/4.jpg",
     title: "Villa at  MOKA",
     status: "To Rent",
+    space: '275',
+    details: '3 Beds',
+    price: '3.5 M'
   },
   {
     id: 5,
     image: "/images/propertiesImage/5.jpg",
     title: "Apartment at PORTLOUIS",
     status: "For sales",
+    space: '250',
+    details: '3 Beds',
+    price: '2.5 M'
   },
   {
     id: 6,
     image: "/images/propertiesImage/6.jpg",
     title: "Villa at  SODNAC",
     status: "To Rent",
+    space: '275',
+    details: '3 Beds',
+    price: '3.75 M'
   },
   {
     id: 7,
@@ -68,25 +86,25 @@ export const clientData = [
   {
     image: "/images/image 1.png",
     name: "Lisa White",
-    title: "Rental Tenant",
+    title: "Home Buyer",
     desc: 'Found my dream home quickly! The platform made the process simple and stress-free. Highly recommended!"',
   },
   {
     image: "/images/image 1.png",
     name: "John Miller",
-    title: "Landlord",
+    title: "Home Buyer",
     desc: 'Found my dream home quickly! The platform made the process simple and stress-free. Highly recommended!"',
   },
   {
     image: "/images/image 1.png",
     name: "Sophia Rodriguez",
-    title: "Real Estate Investor",
+    title: "Home Buyer",
     desc: 'Found my dream home quickly! The platform made the process simple and stress-free. Highly recommended!"',
   },
   {
     image: "/images/image 1.png",
     name: "Michael Scott",
-    title: "Vacation Rental Owner",
+    title: "Property Seller",
     desc: 'Found my dream home quickly! The platform made the process simple and stress-free. Highly recommended!"',
   },
 ];

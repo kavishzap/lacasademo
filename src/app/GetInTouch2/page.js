@@ -25,7 +25,7 @@ const SellerForm = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container mb-5 mt-5">
         <h5 className="header">Ene Pas Envers To Reve</h5>
         <br />
         <div className="">
@@ -92,7 +92,7 @@ const SellerForm = () => {
 
               {/* Max Price */}
               <div className="form-group">
-                <label htmlFor="maxPrice">Max Price ($)</label>
+                <label htmlFor="maxPrice">Max Price (Rs)</label>
                 <input
                   type="number"
                   id="maxPrice"
@@ -114,31 +114,40 @@ const SellerForm = () => {
       </div>
 
       <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
         .container {
+          position: relative;
           display: flex;
           flex-direction: column;
           max-width: 1200px;
           margin: 0 auto;
-          background-color: rgba(255, 255, 255, 0.1); /* White with opacity */
-          backdrop-filter: blur(5px); /* Apply blur effect */
-          -webkit-backdrop-filter: blur(5px); /* Safari support */
+          padding: 40px;
           border-radius: 10px;
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-          padding: 40px;
+          overflow: hidden;
+        }
+
+        /* Background image with overlay */
+        .container::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          
+          background-size: cover;
+          background-position: center;
+          opacity: 0.9; /* Adjust opacity here */
+          z-index: -1;
         }
 
         .header {
           text-align: center;
           font-size: 32px;
           margin-bottom: 30px;
-          font-family: 'Poppins', sans-serif;
-        }
-
-        .form-container {
-          display: flex;
-          flex-direction: column;
+          font-family: "Poppins", sans-serif;
         }
 
         form {
@@ -159,9 +168,8 @@ const SellerForm = () => {
         .form-group label {
           display: block;
           margin-bottom: 5px;
-          font-weight: normal; /* Remove bold */
-          font-family: 'Poppins', sans-serif;
-          color: #a9871c; /* Using label color */
+          font-family: "Poppins", sans-serif;
+          color: #a9871c;
         }
 
         .form-group input,
@@ -171,7 +179,6 @@ const SellerForm = () => {
           border: 1px solid #ccc;
           border-radius: 5px;
           font-size: 16px;
-          font-family: 'Poppins', sans-serif;
         }
 
         .form-submit {
@@ -181,12 +188,11 @@ const SellerForm = () => {
 
         .btn {
           padding: 15px 30px;
-          background-color: #a9871c; /* Use label color for button background */
+          background-color: #a9871c;
           color: white;
           border: none;
           border-radius: 5px;
           font-size: 16px;
-          font-family: 'Poppins', sans-serif;
           cursor: pointer;
           transition: background-color 0.3s ease;
           margin-top: 30px;

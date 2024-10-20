@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
-import Slider from "react-slick";
 import { FaCalendarAlt, FaBuilding, FaReceipt } from "react-icons/fa";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export default function AboutUs() {
   const aboutData = [
@@ -27,50 +24,22 @@ export default function AboutUs() {
     },
   ];
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // Show 3 cards at a time
-    slidesToScroll: 1, // Scroll 1 card at a time
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 768, // Mobile breakpoint
-        settings: {
-          slidesToShow: 1, // Show 1 card on smaller screens
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024, // Tablet and small screens
-        settings: {
-          slidesToShow: 2, // Show 2 cards on medium screens
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
   return (
     <div className="p-3">
       <div className="row justify-content-center">
-        <div className="col">
-          <div className="section-title text-center">
-            <h4 className="title">Why La Casa Properties?</h4>
-            <p className="para-desc mb-0 mx-auto" style={{ color: "#a9871c" }}>
-              A great platform to buy, sell, and rent your properties with utmost guarantee.
-            </p>
-          </div>
+        <div className="col text-center">
+          <h4 className="title">Why La Casa Properties?</h4>
+          <p className="para-desc mb-0 mx-auto" style={{ color: "#a9871c" }}>
+            A great platform to buy, sell, and rent your properties with utmost guarantee.
+          </p>
         </div>
       </div>
 
-      <Slider {...sliderSettings}>
+      <div className="row mt-4">
         {aboutData.map((item, index) => {
           const Icon = item.icon;
           return (
-            <div className="col-md-4 col-sm-6 mt-3" key={index}>
+            <div key={index} className="col-md-4 col-sm-6 mt-3">
               <div
                 className="card shadow text-center p-4 border-0 h-100"
                 style={{
@@ -79,12 +48,10 @@ export default function AboutUs() {
                   backgroundPosition: "center",
                   position: "relative",
                   overflow: "hidden",
-                  borderRadius: "10px", // Rounded corners
-                  transition: "transform 0.3s ease-in-out", // Smooth transition for hover effect
-                  margin: "0 15px", // Space between cards
-                  height: "400px", // Set fixed height
+                  borderRadius: "10px",
+                  height: "400px",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")} // Zoom effect on hover
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
                 onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
               >
                 <div
@@ -101,26 +68,21 @@ export default function AboutUs() {
                   }}
                 ></div>
 
-                <div
-                  className="card-body position-relative"
-                  style={{ zIndex: 2 }}
-                >
+                <div className="card-body position-relative" style={{ zIndex: 2 }}>
                   <div
                     className="icon-box bg-light rounded-circle mb-3 mx-auto d-flex align-items-center justify-content-center"
                     style={{ height: "60px", width: "60px" }}
                   >
                     <Icon className="fea icon-m-md text-primary fs-3" />
                   </div>
-                  <h5 className="card-title fw-medium text-white">
-                    {item.title}
-                  </h5>
+                  <h5 className="card-title fw-medium text-white">{item.title}</h5>
                   <p className="card-text text-white">{item.desc}</p>
                 </div>
               </div>
             </div>
           );
         })}
-      </Slider>
+      </div>
 
       <style jsx>{`
         .card {

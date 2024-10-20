@@ -43,7 +43,7 @@ export default function FeaturedProperties() {
         <div className="col">
           <div className="section-title text-center pb-2">
             <h4 className="title text-extrabold">Featured Properties</h4>
-            <p className="para-desc mx-auto" style={{ color: "#a9871c" }}>
+            <p className="para-desc mx-auto mt-3" style={{ color: "#a9871c" }}>
               To Premier Pas Pu Fer To Reve Vin Ene Realiter
             </p>
           </div>
@@ -53,23 +53,13 @@ export default function FeaturedProperties() {
       <Slider {...sliderSettings}>
         {propertyData.slice(0, 6).map((item, index) => (
           <div key={index} className="card-container">
-            <div
-              style={{
-                textAlign: "center",
-                backgroundColor: "rgba(169, 135, 28)",
-                borderRadius: "10px",
-                color: "white", 
-              }}
-            >
-            </div>
-
+            {/* Property Card */}
             <div className="property-card">
-              <div className="property-info">
-                <ul className="list-unstyled d-flex align-items-center justify-content-between property-details">
-                  <i className="mdi mdi-map-marker fs-5 me-2 text-black"></i>{" "}
-                  {item.title}
-                </ul>
+              {/* Button on Top */}
+              <div className="property-button">
+                <button className="btn btn-primary">{item.status}</button>
               </div>
+
               <Image
                 src={item.image}
                 width={0}
@@ -84,19 +74,20 @@ export default function FeaturedProperties() {
                 alt={item.title}
               />
 
+              {/* Property Info */}
               <div className="property-info">
                 <ul className="list-unstyled d-flex align-items-center justify-content-between property-details">
                   <li className="d-flex align-items-center me-3">
                     <i className="mdi mdi-arrow-expand-all fs-5 me-2 text-white"></i>
-                    <span className="text-white">8000 m2</span>
+                    <span className="text-white">{item.space} m2</span>
                   </li>
                   <li className="d-flex align-items-center me-3">
                     <i className="mdi mdi-bed fs-5 me-2 text-white"></i>
-                    <span className="text-white">4 Beds</span>
+                    <span className="text-white">{item.details}</span>
                   </li>
                   <li className="d-flex align-items-center">
-                    <i className="mdi mdi-currency-usd fs-5 me-2 text-white"></i>
-                    <span className="text-white">5000</span>
+                    <i className="fs-7 me-2 text-white">Rs</i>
+                    <span className="text-white">{item.price}</span>
                   </li>
                 </ul>
               </div>
@@ -127,6 +118,24 @@ export default function FeaturedProperties() {
         }
         .property-card:hover {
           transform: scale(1.05); // Zoom effect on hover
+        }
+        .property-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          z-index: 10;
+        }
+        .property-button .btn {
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 8px 12px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+        .property-button .btn:hover {
+          background-color: rgba(0, 0, 0, 0.9);
         }
         .property-info {
           position: absolute;
